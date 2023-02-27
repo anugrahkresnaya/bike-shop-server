@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node -r dotenv/config bin/www",
-    "dev": "nodemon -r dotenv/config bin/www"
+    "dev": "nodemon -r dotenv/config bin/www",
+    "db:create": "sequelize db:create",
+    "db:drop": "sequelize db:drop",
+    "db:migrate": "sequelize db:migrate",
+    "db:seed": "sequelize db:seed:undo:all && sequelize db:seed:all",
+    "db:setup": "yarn db:drop && yarn db:create && yarn db:migrate && yarn db:seed"
   },
   "keywords": [],
   "author": "",
